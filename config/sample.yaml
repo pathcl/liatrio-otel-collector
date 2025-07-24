@@ -1,0 +1,45 @@
+receivers:
+  azuredevops:
+    endpoint: 0.0.0.0:8080
+    path: /azuredevops/webhook
+
+processors:
+  filter/azuredevops:
+    include:
+      match_type: strict
+      attributes:
+        - key: azuredevops.event_type
+          value: build.complete
+        - key: azuredevops.event_type
+          value: release.created
+        - key: azuredevops.event_type
+          value: release.deployment.completed
+        - key: azuredevops.event_type
+          value: run.state.changed
+        - key: azuredevops.event_type
+          value: pullrequest.created
+        - key: azuredevops.event_type
+          value: pullrequest.updated
+        - key: azuredevops.event_type
+          value: workitem.created
+        - key: azuredevops.event_type
+          value: workitem.updated
+        - key: azuredevops.event_type
+          value: ms.vss-alerts.alert-state-changed-event
+        - key: azuredevops.event_type
+          value: ms.vss-alerts.alert-updated-event
+
+  batch: {}
+
+exporters:
+  otlp:
+    endpoint: <your-otel-backend>:4317
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [azuredevops]
+      processors: [filter/azuredevops, batch]
+      exporters: [otlp]

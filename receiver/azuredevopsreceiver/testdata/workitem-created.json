@@ -1,0 +1,12 @@
+{
+  "eventType": "workitem.created",
+  "resource": {
+    "id": 5001,
+    "rev": 1,
+    "fields": {
+      "System.Title": "Bug: Fix login issue",
+      "System.State": "New"
+    },
+    "url": "https://dev.azure.com/FabrikamFiber/_apis/wit/workItems/5001"
+  }
+} 

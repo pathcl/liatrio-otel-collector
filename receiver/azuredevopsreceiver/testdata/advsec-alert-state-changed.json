@@ -1,0 +1,12 @@
+{
+  "eventType": "ms.vss-alerts.alert-state-changed-event",
+  "resource": {
+    "alertId": 6001,
+    "severity": "critical",
+    "title": "Critical vulnerability found",
+    "alertType": "code",
+    "state": "active",
+    "repositoryUrl": "https://dev.azure.com/FabrikamFiber/_git/FabrikamRepo",
+    "gitRef": "refs/heads/main"
+  }
+} 

@@ -1,0 +1,17 @@
+{
+  "eventType": "release.deployment.completed",
+  "resource": {
+    "deploymentId": 2001,
+    "release": {
+      "id": 1001,
+      "name": "Release-42"
+    },
+    "status": "succeeded",
+    "startedOn": "2024-12-02T13:10:00Z",
+    "completedOn": "2024-12-02T13:20:00Z",
+    "project": {
+      "id": "proj-42",
+      "name": "FabrikamFiber"
+    }
+  }
+} 

@@ -49,6 +49,7 @@ receivers:
   - gomod: github.com/liatrio/liatrio-otel-collector/receiver/gitlabreceiver v0.90.1
   - gomod: github.com/liatrio/liatrio-otel-collector/receiver/githubreceiver v0.90.1
   - gomod: github.com/liatrio/liatrio-otel-collector/receiver/githubactionsreceiver v0.90.1
+  - gomod: github.com/liatrio/liatrio-otel-collector/receiver/azuredevopsreceiver v0.0.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver v0.124.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kubeletstatsreceiver v0.124.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sclusterreceiver v0.124.0
@@ -82,3 +83,4 @@ replaces:
   - github.com/aws/aws-sdk-go => github.com/aws/aws-sdk-go v1.55.0
   - github.com/expr-lang/expr => github.com/expr-lang/expr v1.17.0
   - go.opentelemetry.io/collector/extension/extensionauth => go.opentelemetry.io/collector/extension/extensionauth v0.122.1
+  - github.com/liatrio/liatrio-otel-collector/receiver/azuredevopsreceiver => ../receiver/azuredevopsreceiver/

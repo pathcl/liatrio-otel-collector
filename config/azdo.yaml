@@ -1,0 +1,56 @@
+receivers:
+  azuredevops:
+    # The endpoint and path where Azure DevOps will POST webhook events
+    endpoint: 0.0.0.0:8080
+    path: /azuredevops/webhook
+    # Optionally, you can add authentication or secret validation here if needed
+
+processors:
+  # Filter only the Azure DevOps event types you care about
+  filter/azuredevops:
+    traces:
+      include:
+        match_type: strict
+        attributes:
+          - key: azuredevops.event_type
+            value: build.complete
+          - key: azuredevops.event_type
+            value: release.created
+          - key: azuredevops.event_type
+            value: release.deployment.completed
+          - key: azuredevops.event_type
+            value: run.state.changed
+          - key: azuredevops.event_type
+            value: pullrequest.created
+          - key: azuredevops.event_type
+            value: pullrequest.updated
+          - key: azuredevops.event_type
+            value: workitem.created
+          - key: azuredevops.event_type
+            value: workitem.updated
+          - key: azuredevops.event_type
+            value: ms.vss-alerts.alert-state-changed-event
+          - key: azuredevops.event_type
+            value: ms.vss-alerts.alert-updated-event
+
+  # Optionally, transform the event to add or rename attributes for semantic clarity
+  transform/azuredevops:
+    trace_statements:
+      - context: span
+        statements:
+          # Example: promote build number to service.name for easier search
+          - set(attributes["service.name"], attributes["azuredevops.build.number"]) where attributes["azuredevops.build.number"] != nil
+          # Add more transformation rules as needed
+
+exporters:
+  otlp:
+    endpoint: <your-otel-backend>:4317
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [azuredevops]
+      processors: [filter/azuredevops, transform/azuredevops]
+      exporters: [otlp]

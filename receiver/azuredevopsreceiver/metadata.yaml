@@ -1,0 +1,4 @@
+type: receiver
+name: azuredevops
+stability: alpha
+description: Receives Azure DevOps Service Hook events and converts them to OpenTelemetry traces. 

@@ -1,0 +1,22 @@
+{
+  "eventType": "pullrequest.created",
+  "resource": {
+    "pullRequestId": 4001,
+    "title": "Add new feature",
+    "status": "active",
+    "createdBy": {
+      "id": "user-1",
+      "displayName": "Alice"
+    },
+    "creationDate": "2024-12-02T15:00:00Z",
+    "closedDate": "",
+    "repository": {
+      "id": "repo-1",
+      "name": "FabrikamRepo"
+    },
+    "project": {
+      "id": "proj-42",
+      "name": "FabrikamFiber"
+    }
+  }
+} 

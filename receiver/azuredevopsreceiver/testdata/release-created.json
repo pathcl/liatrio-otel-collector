@@ -1,0 +1,14 @@
+{
+  "eventType": "release.created",
+  "resource": {
+    "id": 1001,
+    "name": "Release-42",
+    "status": "active",
+    "createdOn": "2024-12-02T13:00:00Z",
+    "modifiedOn": "2024-12-02T13:05:00Z",
+    "project": {
+      "id": "proj-42",
+      "name": "FabrikamFiber"
+    }
+  }
+} 

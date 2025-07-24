@@ -1,0 +1,15 @@
+{
+  "eventType": "run.state.changed",
+  "resource": {
+    "id": 3001,
+    "name": "Pipeline-Run-1",
+    "state": "completed",
+    "result": "succeeded",
+    "startedOn": "2024-12-02T14:00:00Z",
+    "finishedOn": "2024-12-02T14:10:00Z",
+    "project": {
+      "id": "proj-42",
+      "name": "FabrikamFiber"
+    }
+  }
+} 

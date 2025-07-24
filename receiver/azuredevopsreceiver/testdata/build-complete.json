@@ -1,0 +1,19 @@
+{
+  "eventType": "build.complete",
+  "resource": {
+    "id": 2727068,
+    "buildNumber": "20241202.1",
+    "status": "completed",
+    "result": "succeeded",
+    "startTime": "2024-12-02T12:11:13.8866607Z",
+    "finishTime": "2024-12-02T12:21:13.8866607Z",
+    "definition": {
+      "id": 1,
+      "name": "FabrikamFiber CI"
+    },
+    "project": {
+      "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff",
+      "name": "FabrikamFiber"
+    }
+  }
+} 
